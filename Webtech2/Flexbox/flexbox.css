@@ -1,0 +1,37 @@
+body{
+  font-family: Oswald;
+}
+
+h1{
+  font-family: Playfair display;
+  font-size: 2.4rem;
+}
+
+article img{
+  max-width: 100%;
+  width: 100%;
+}
+
+article{
+  /*flex-grow: 1 ;
+  flex-shrink:1;
+  flex-basis: 200px;*/
+  flex: 1 1 200px;
+  padding: 1em;
+}
+
+@media (min-width: 60em){
+  section{
+    display: flex;
+    /*flex-direction: row;*/
+    
+  }
+  
+  article{
+    /*width: 600px;*/
+  }
+  
+  section article:first-child{
+    flex-grow: 2;
+  }
+}

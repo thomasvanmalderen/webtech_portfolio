@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
+    <title>Heroes</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2>THE DAILY</h2>
+            <h1>HERO</h1>
+        </div>
+    </header>
+    
+    <section>
+        <div class="blockimg blck1"><img src="http://www.skringers.com/wp-content/uploads/Captain-America-Wallpaper-Thor-Hulk-Captain-America-and-Iron-Man.jpg" alt=""></div>
+        <div class="blockimg blck2"><img src="http://p1.pichost.me/i/30/1528595.jpg" alt=""></div>
+        <div class="blockimg blck3"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers/superhero-hd-wallpapers-4.jpg" alt=""></div>
+        <div class="blockimg blck4"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-5.jpg" alt=""></div>
+        <div class="blockimg blck5"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-7.jpg" alt=""></div>
+        <div class="blockimg blck6"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-3.jpg" alt=""></div>
+        <div class="blockimg blck7"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-2.jpg" alt=""></div>
+        <div class="blockimg blck8"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-1.jpg" alt=""></div>
+        <div class="blockimg blck9"><img src="http://www.apnatimepass.com/superhero-hd-wallpapers-6.jpg" alt=""></div>
+        
+        
+    </section>
+</body>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background-image: url("http://i.kinja-img.com/gawker-media/image/upload/aanylkvqioohwdg2z8vr.jpg");
+        background-position: center 0px;
+        background-size: 100%;
+        
+        
+    }
+    
+    header{
+        width: 100%;
+        margin-top: 1em;
+        height: 4em;
+        margin-bottom: 1.2em;
+    }
+    
+    h1{
+        font-family: Arial;
+        color: yellow;
+        font-size: 3em;
+    }
+    
+    h2{
+        font-family: Times New Roman;
+        color: white;
+        font-size: 1.5em;
+    }
+    
+    .logo{
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    
+    section{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .blockimg{
+        display: block;
+        width: 98%;
+        margin: 1%
+    }
+    
+    .blockimg img{
+        width: 100%;
+    }
+    
+    @media (min-width: 700px){
+        h1{
+        font-family: Arial;
+        color: darkorange;
+        font-size: 3em;
+    }
+        
+        section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: inline wrap;
+        
+    }
+        .blockimg{
+        display: block;
+        width: 48%;
+        margin: 1%;
+        
+        
+    }
+     
+        .blck1, .blck2{
+            /*flex: 2 1 281px;*/
+            /*flex-grow: 40;*/
+        }
+        
+        .blck3, .blck4, .blck5, .blck6{
+            /*width: 21.5%*/
+            flex:0 0 22%;
+            /*flex: 1 2 99px;*/
+        }
+        .blck7, .blck8, .blck9{
+            /*width: 29.5%*/
+            flex: 0 0 31%;
+        }
+    }
+    
+    
+    
+    
+    
+</style>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weather</title>
+	<style>
+        body{
+            background-color: #000;
+            color: white;
+            font-family: helvetica;
+            background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+            background-color:#282828;
+            background-size:16px 16px;
+        }
+        
+        .container{
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+        }
+        
+        .weather{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .skycon{
+            width: 100%;
+            background-image: url(http://static.panoramio.com/photos/original/10282648.jpg);
+            background-size: cover;
+            background-position: 50% 30%;
+            padding-bottom: 60px;
+            padding-top: 60px;
+        }
+        .rain, .humid{
+            float: left;
+            margin-left: 10%;
+        }
+        .wind, .pascal{
+            float: right;
+            margin-right: 9%;
+        }
+        .icon{
+            float: left;
+            width: 40px;
+            margin-left: 8%;
+        }
+        h1{
+            color:black;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            font-size: 2.6em;
+        }
+        hr{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2{
+            color:black;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            font-size: 1.8em;
+        }
+        h3{
+            color:black;
+            margin-bottom: 3px;
+            margin-top: 3px;
+            font-size: 1.8em;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+	    <div class="weather">
+		<div class="skycon">
+        <canvas id="weathericon" width="200" height="200"></canvas>
+        
+        </div>
+        <h1 class="temp"></h1>
+		<hr>
+		<h2 class="weather-summary"></h2>
+		<hr>
+		<div class="info2">
+		    <img src="images/weathericons_rain.png" alt="icon" class="icon"><h3 class="rain"></h3>
+		    <h3 class="wind"></h3>
+		</div>
+		<hr>
+		<div class="info3">
+		    <img src="images/weathericons_humid.png" alt="icon" class="icon"><h3 class="humid"></h3>
+		    <h3 class="pascal"></h3>
+		</div>
+        <hr>
+        <div class="forecast">
+           <div class="tommorow">
+               <h3></h3>
+               <canvas id="smallcon1"></canvas>
+               <h4 class="smalltemp"></h4>
+           </div>
+           <div class="aftertom">
+               <h3></h3>
+               <canvas id="smallcon2"></canvas>
+               <h4 class="smalltemp"></h4>
+           </div>
+           <div class="afaftertom">
+               <h3></h3>
+               <canvas class="smallcon3"></canvas>
+               <h4 class="smalltemp"></h4>
+           </div>
+           <div class="afafaftertom">
+               <h3></h3>
+               <canvas id="smallcon4"></canvas>
+               <h4 class="smalltemp"></h4>
+           </div>
+            
+        </div>
+	    </div>
+	</div>
+	
+    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+	<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+	<script src="js/skycons.js"></script>
+	<script src="js/start.js"></script>
+	
+
+</body>
+</html>

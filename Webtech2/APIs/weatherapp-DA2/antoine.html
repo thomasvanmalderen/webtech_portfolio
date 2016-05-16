@@ -1,0 +1,64 @@
+/*global  $, Skycons*/
+(function () {
+    'use strict';
+    
+    var App = {
+        APIKEY: "04748ba40bc1ff7ba7c9deb3eeb83782",
+        lat: "",
+        lgn: "",
+        
+        init: function () {
+            //start the app
+            App.getLocation();
+        },
+        getLocation: function () {
+            //get the current user position
+            navigator.geolocation.getCurrentPosition(App.foundPosition);
+        },
+        foundPosition: function (pos) {
+            //found the current user position
+            App.lat = pos.coords.latitude;
+            App.lng = pos.coords.longitude;
+            App.getWeather();
+        },
+        getWeather: function () {
+            //get the current weather for my location
+            var url = "https://api.forecast.io/forecast/" + App.APIKEY + "/" + App.lat + "," + App.lng;
+            
+            //JSONP
+            window.jQuery.ajax({
+                url: url,
+                dataType: "jsonp",
+                success: function (data) {
+                    console.log(data);
+                    
+                    $(".weather-summary").text(data.currently.summary);
+                    $("#weather-icon").text(data.currently.icon);
+                    $(".weather-temp").text(Math.floor(((data.currently.temperature) - 32) / 1.8) + " °C");
+                    
+                    $(".weather-summary-1").text(data.daily.data[1].summary);
+                    $("#weather-icon-1").text(data.daily.data[1].icon);
+                    $(".weather-temp-1").text(Math.floor((((data.daily.data[1].temperatureMax + data.daily.data[1].temperatureMin) / 2) - 32) / 1.8) + " °C");
+                    
+                    $(".weather-summary-2").text(data.daily.data[2].summary);
+                    $("#weather-icon-2").text(data.daily.data[2].icon);
+                    $(".weather-temp-2").text(Math.floor((((data.daily.data[2].temperatureMax + data.daily.data[2].temperatureMin) / 2) - 32) / 1.8) + " °C");
+                    
+                    $(".weather-summary-3").text(data.daily.data[3].summary);
+                    $("#weather-icon-3").text(data.daily.data[3].icon);
+                    $(".weather-temp-3").text(Math.floor((((data.daily.data[3].temperatureMax + data.daily.data[3].temperatureMin) / 2) - 32) / 1.8) + " °C");
+                    
+                    var skycons = new Skycons({"color": "#CCC"});
+                    skycons.add("weather-icon", data.currently.icon);
+                    skycons.add("weather-icon-1", data.daily.data[1].icon);
+                    skycons.add("weather-icon-2", data.daily.data[2].icon);
+                    skycons.add("weather-icon-3", data.daily.data[3].icon);
+                    skycons.play();
+                }
+            });
+        }
+    };
+    
+    App.init();
+    
+}());

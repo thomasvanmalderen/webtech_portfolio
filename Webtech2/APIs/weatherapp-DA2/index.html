@@ -70,6 +70,22 @@ radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
             margin-top: 3px;
             font-size: 1.8em;
         }
+        h4{
+            color:black;
+        }
+        
+        .forecast{
+            width: 100%;
+            display: flex;
+        }
+        
+        .tommorow, .aftertom, .afaftertom, .afafaftertom{
+            width: 25%;
+            border-right: 2px solid #3D3D3D;
+        }
+        .iconsmall{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -95,24 +111,24 @@ radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
         <hr>
         <div class="forecast">
            <div class="tommorow">
-               <h3></h3>
-               <canvas id="smallcon1"></canvas>
-               <h4 class="smalltemp"></h4>
+               <h3 class="smalltemp1"></h3>
+               <canvas class="iconsmall" id="smallcon1"></canvas>
+               <h4 class="rain1"></h4>
            </div>
            <div class="aftertom">
-               <h3></h3>
-               <canvas id="smallcon2"></canvas>
-               <h4 class="smalltemp"></h4>
+               <h3 class="smalltemp2"></h3>
+               <canvas class="iconsmall" id="smallcon2"></canvas>
+               <h4 class="rain2"></h4>
            </div>
            <div class="afaftertom">
-               <h3></h3>
-               <canvas class="smallcon3"></canvas>
-               <h4 class="smalltemp"></h4>
+               <h3 class="smalltemp3"></h3>
+               <canvas class="iconsmall" id="smallcon3"></canvas>
+               <h4 class="rain3"></h4>
            </div>
            <div class="afafaftertom">
-               <h3></h3>
-               <canvas id="smallcon4"></canvas>
-               <h4 class="smalltemp"></h4>
+               <h3 class="smalltemp4"></h3>
+               <canvas class="iconsmall" id="smallcon4"></canvas>
+               <h4 class="rain4"></h4>
            </div>
             
         </div>

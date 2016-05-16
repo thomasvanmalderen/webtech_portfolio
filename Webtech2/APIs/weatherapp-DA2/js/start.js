@@ -94,16 +94,46 @@
                         $windrichting = "N";
                     }
                     
-                    var skycons = new Skycons({"color": "White"});
-                    skycons.add("weathericon", data.currently.icon);
-                    skycons.play();
-                    
                     $(".temp").text($celsius + "°");
                     $(".weather-summary").text(data.currently.summary);
                     $(".rain").text(data.currently.precipProbability + "%");
                     $(".wind").text($windrichting + " " + data.currently.windSpeed + " Km/u");
                     $(".humid").text(data.currently.humidity + "%");
                     $(".pascal").text(data.currently.pressure + " pa");
+                    
+                    $(".smalltemp1").text(Math.round((data.daily.data[1].apparentTemperatureMax - 32) * 5/9) + "°");
+                    $("#smallcon1").text(data.daily.data[1].icon);
+                    $(".rain1").text(data.daily.data[1].precipProbability + " %");
+                    
+                    $(".smalltemp2").text(Math.round((data.daily.data[2].apparentTemperatureMax - 32) * 5/9) + "°");
+                    $("#smallcon2").text(data.daily.data[2].icon);
+                    $(".rain2").text(data.daily.data[2].precipProbability + " %");
+                    
+                    $(".smalltemp3").text(Math.round((data.daily.data[3].apparentTemperatureMax - 32) * 5/9) + "°");
+                    $("#smallcon3").text(data.daily.data[3].icon);
+                    $(".rain3").text(data.daily.data[3].precipProbability + " %");
+                    
+                    $(".smalltemp4").text(Math.round((data.daily.data[4].apparentTemperatureMax - 32) * 5/9) + "°");
+                    $("#smallcon4").text(data.daily.data[4].icon);
+                    $(".rain4").text(data.daily.data[4].precipProbability + " %");
+                    
+                    
+                    /*$(".weather-summary-1").text(data.daily.data[1].summary);
+                    $("#weather-icon-1").text(data.daily.data[1].icon);
+                    $(".weather-temp-1").text(Math.floor((((data.daily.data[1].temperatureMax + data.daily.data[1].temperatureMin) / 2) - 32) / 1.8) + " °C");*/
+                    
+                    var skycons = new Skycons({"color": "White"});
+                    skycons.add("weathericon", data.currently.icon);
+                    var skycons2 = new Skycons({"color": "Black"});
+                    skycons2.add("smallcon1", data.daily.data[1].icon);
+                    skycons2.add("smallcon2", data.daily.data[2].icon);
+                    skycons2.add("smallcon3", data.daily.data[3].icon);
+                    skycons2.add("smallcon4", data.daily.data[4].icon);
+                    skycons.play();
+                    skycons2.play();
+                    
+                    
+                    
                     
                 }
             });
